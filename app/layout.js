@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Header } from "@/components/Header";
+import { dark } from "@clerk/themes";
 
 const inter=Inter({subsets:['latin']})
 
@@ -13,7 +14,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{
+      baseTheme:dark
+    }}>
       <html lang="en" suppressHydrationWarning>
         <body
           className={`${inter.className} `}
