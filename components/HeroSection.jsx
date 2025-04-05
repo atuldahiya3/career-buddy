@@ -1,9 +1,28 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 
 const HeroSection = () => {
+  const imageRef = useRef(null);
+  useEffect(() => {
+    const imageElem = imageRef.current;
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const scrollThreshold = 100;
+      if (scrollPosition > scrollThreshold) {
+        imageElem.classList.add("scrolled");
+      }else{
+        imageElem.classList.remove("scrolled");
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section className="w-full pt-36 flex justify-center items-center">
       <div className="text-center">
@@ -22,20 +41,25 @@ const HeroSection = () => {
 
         <div className="flex justify-center gap-8 px-20">
           <Link href="/dashboard">
-            <Button className="size-lg font-bold text-xl px-8">Get Started</Button>
+            <Button className="size-lg font-bold text-xl px-8">
+              Get Started
+            </Button>
           </Link>
           <Link href="/https://www.youtube.com/watch?v=O7tvHh3MPSs&list=RDO7tvHh3MPSs&start_radio=1">
-            <Button className="size-lg font-bold text-xl px-8" variant="outline">
+            <Button
+              className="size-lg font-bold text-xl px-8"
+              variant="outline"
+            >
               Watch Demo
             </Button>
           </Link>
         </div>
-        <div className="p-20 w-full">
-          <div>
+        <div className="hero-image-wrapper py-20 px-8 w-full">
+          <div ref={imageRef} className="hero-image">
             <Image
               src={"/hero.jpg"}
-              height={1080}
-              width={720}
+              height={540}
+              width={960}
               alt="hero image"
               className="rounded-lg shadow-2xl border mx-auto"
               priority
