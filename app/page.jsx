@@ -1,8 +1,9 @@
-import Features from "@/components/Features";
-import HeroSection from "@/components/HeroSection";
-import HowItWorks from "@/components/HowItWorks";
-import Stats from "@/components/Stats";
-import Testimonials from "@/components/Testimonials";
+import FAQs from "@/components/HomePage/FAQs";
+import Features from "@/components/HomePage/Features";
+import HeroSection from "@/components/HomePage/HeroSection";
+import HowItWorks from "@/components/HomePage/HowItWorks";
+import Stats from "@/components/HomePage/Stats";
+import Testimonials from "@/components/HomePage/Testimonials";
 import { Accordion } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -11,20 +12,13 @@ export default function Home() {
   return (
     <div>
       <div className="grid-background">
-        <HeroSection/>
+        <HeroSection />
       </div>
-      <section>
-        <Features/>
-      </section>
-      <section>
-        <Stats/>
-      </section>
-      <section>
-        <HowItWorks/>
-      </section>
-      <section>
-        <Testimonials/>
-      </section>
+      <Features />
+      <Stats />
+      <HowItWorks />
+      <Testimonials />
+      <FAQs />
     </div>
   );
 }

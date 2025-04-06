@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
-import { howItWorks } from './data/howItWorks';
+import { howItWorks } from '../data/howItWorks';
 
 const HowItWorks = () => {
   const cardRefs = useRef([]);

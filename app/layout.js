@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
                 {children}
               </main>
               {/* footer */}
-              <footer className="h-36 flex justify-center items-center bg-gray-800">
+              <footer className="h-36 flex justify-center items-center bg-black">
                 <div className="text-3xl p-10">
                   Made by industry experts while drinking
                 </div>
