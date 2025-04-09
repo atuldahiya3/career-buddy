@@ -18,9 +18,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { ChevronDownIcon, FileIcon, FileText, GraduationCap, LayoutIcon, PenBox, StarIcon, VideoIcon } from "lucide-react";
+import { checkUser } from "@/lib/CheckUser";
 
 
-export const Header = () => {
+export const Header = async() => {
+  await checkUser();
   return (
     <header className=" bg-background/80 fixed top-0 w-full border-b z-50 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto flex justify-between items-center pt-5 px-20 mb-5 h-20">
