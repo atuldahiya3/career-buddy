@@ -1,14 +1,15 @@
 "use server"
 
+import { db } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 
 export async function updateUser(data){
-    const {userId}=auth();
+    const {userId}=await auth();
     if(!userId) throw new Error("Unauthorized");
 
     const user= db.user.findUnique({
         where:{
-            clerkUserId:userId,
+            clerkId:userId,
         }
     })
     if(!user) throw new Error('user not found!');
@@ -64,18 +65,18 @@ export async function updateUser(data){
     }
 }
 export async function getUserOnBoardingStatus(){
-    const {userId}=auth();
+    const {userId}=await auth();
     if(!userId) throw new Error("Unauthorized");
     const user= await db.user.findUnique({
         where:{
-            id:user.id,
+            clerkId:userId,
         }
     })
     if(!user) throw new Error('user not found!');
     try {
         const user= await db.user.findUnique({
             where:{
-                id:user.id,
+                clerkId:userId,
             },
             select:{
                 industry:true,

@@ -19,5 +19,8 @@ export const onboardingFormSchema=z.object({
         val?
          val.split(',').map((skill)=> skill.trim()).filter((skill)=> skill.length > 0)
          :undefined
-    })
+    }),
+    bio: z.string({
+        required_error:'Please enter a bio'
+    }).optional()
 })
