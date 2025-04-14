@@ -46,7 +46,7 @@ export const Header = async() => {
             </Link>
             
             <DropdownMenu>
-            <DropdownMenuTrigger>
+            <DropdownMenuTrigger asChild>
             <Button>
               <StarIcon/>
               <span>
