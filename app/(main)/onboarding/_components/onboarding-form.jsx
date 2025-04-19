@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { onboardingFormSchema } from "@/app/lib/schema";
@@ -24,6 +24,9 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import UseFetch from "@/hooks/use-fetch";
+import { updateUser } from "@/actions/user";
+import { toast } from "sonner";
 
 const OnboardingForm = ({ industries }) => {
   const [selectedIndustry, setSelectedIndustry] = useState(null);
@@ -39,9 +42,23 @@ const OnboardingForm = ({ industries }) => {
   } = useForm({
     resolver: zodResolver(onboardingFormSchema),
   });
+  const {
+    loading:updateLoading,
+    fn:updateUserFn,
+    data:updateResult
+  }=UseFetch(updateUser)
   const onSubmit = async (data) => {
-    console.log("submitting form",data);
+    const formattedIndustry= `${data.industry}-${data.subIndustry}`.toLowerCase().replace(/ /g, '-')
+    await updateUserFn({...data, industry:formattedIndustry});
   }
+  useEffect(() => {
+    if(updateResult?.success && !updateLoading){
+      toast.success("Profile updated successfully")
+      router.push('/dashboard')
+      router.refresh()
+    }
+  },[updateLoading,updateResult])
+  
   return (
     <div className="mt-36 flex items-center justify-center bg-background">
       <Card className="w-full max-w-lg mt-10 mx-2">
