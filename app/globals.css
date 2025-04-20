@@ -150,8 +150,8 @@ pointer-events: none;
   perspective: 1000px;
 }
 .hero-image{
-  transform:rotateX(20deg) scale(1);
-  transition: transform 0.5s ease-out;
+  transform:rotateX(90deg) scale(1);
+  transition: transform 0.7s ease-out;
   will-change: transform;
 }
 .hero-image.scrolled{

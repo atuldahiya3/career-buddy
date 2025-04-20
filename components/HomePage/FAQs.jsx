@@ -12,7 +12,7 @@ import { ArrowRight } from "lucide-react";
 const FAQs = () => {
   return (
     <div>
-        <section className="w-full h-auto flex justify-center p-20 ">
+        <section className="w-full h-auto flex justify-center p-10 lg:p-20 ">
         <div className="text-center max-w-3xl w-full">
             <h1 className="p-5 text-5xl font-bold bg-gradient-to-b from-gray-500 to-gray-300 bg-clip-text text-transparent">
             Frequently Asked Questions
@@ -38,7 +38,7 @@ const FAQs = () => {
             </div>
         </div>
         </section>
-        <section className="w-full h-auto flex justify-center p-20 bg-gradient-to-br from-gray-700 to-gray-300">
+        <section className="w-full h-auto flex justify-center  p-10 lg:p-20 bg-gradient-to-br from-gray-700 to-gray-300">
         <div className="text-center max-w-3xl w-full">
             <h1 className="p-5 text-5xl font-bold text-black bg-clip-text ">
             Ready to Accelerate Your Career?

@@ -36,10 +36,10 @@ const HowItWorks = () => {
   }, []);
 
   return (
-    <section className="p-20">
+    <section className=" p-10 lg:p-20">
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-5xl font-bold mb-4">How It Works</h1>
-        <p className="text-xl text-gray-700">
+        <h1 className="text-5xl font-bold mb-4 bg-gradient-to-b from-gray-500 to-gray-300 bg-clip-text text-transparent">How It Works</h1>
+        <p className="text-xl text-gray-400">
           Our platform uses advanced AI algorithms to provide personalized career guidance, interview preparation, and industry insights.
         </p>
       </div>
