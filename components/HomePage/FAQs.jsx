@@ -8,6 +8,7 @@ import {
 import { faqs } from "../data/faqs";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const FAQs = () => {
   return (
@@ -45,9 +46,11 @@ const FAQs = () => {
             </h1>
             <div>
             <div className="flex items-center justify-center ">
-                <Button className="flex items-center justify-center text-xl bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mt-10 mb-8 shadow-xl animate-bounce">
-                Start Your Journey Now <ArrowRight className="text-black "/>
-                </Button>
+                <Link href="/dashboard">
+                    <Button className="flex items-center justify-center text-xl bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mt-10 mb-8 shadow-xl animate-bounce">
+                    Start Your Journey Now <ArrowRight className="text-black "/>
+                    </Button>
+                </Link>
             </div>
             </div>
         </div>
