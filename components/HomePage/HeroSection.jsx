@@ -42,25 +42,26 @@ const HeroSection = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 md:gap-8 px-4 sm:px-8 md:px-12 lg:px-20">
-          <Link href="/dashboard" className="w-full sm:w-auto">
-            <Button className="w-full sm:w-auto text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 py-2 md:py-3">
-              Get Started
-            </Button>
-          </Link>
-          <Link href="https://www.youtube.com/watch?v=O7tvHh3MPSs&list=RDO7tvHh3MPSs&start_radio=1" className="w-full sm:w-auto">
-            <Button
-              className="w-full sm:w-auto text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 py-2 md:py-3"
-              variant="outline"
-            >
-              Watch Demo
-            </Button>
-          </Link>
+        <Link href="/dashboard">
+        <button style={{ padding: "10px 20px", background: "#000", color: "#fff" }}>
+          Get Started
+        </button>
+      </Link>
+      <a
+        href="https://www.youtube.com/watch?v=O7tvHh3MPSs&list=RDO7tvHh3MPSs&start_radio=1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button style={{ padding: "10px 20px", background: "#fff", border: "1px solid #000" }}>
+          Watch Demo
+        </button>
+      </a>
         </div>
         
         <div className="hero-image-wrapper py-8 sm:py-12 md:py-16 lg:py-20 px-2 sm:px-4 md:px-6 lg:px-8 w-full">
           <div ref={imageRef} className="hero-image transition-all duration-300 ease-in-out">
             <Image
-              src="/hero2.png"
+              src="/hero3.png"
               height={540}
               width={960}
               alt="Hero image showing career advancement"
