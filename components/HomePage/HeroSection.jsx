@@ -61,7 +61,7 @@ const HeroSection = () => {
         <div className="hero-image-wrapper py-8 sm:py-12 md:py-16 lg:py-20 px-2 sm:px-4 md:px-6 lg:px-8 w-full">
           <div ref={imageRef} className="hero-image transition-all duration-300 ease-in-out">
             <Image
-              src="/hero2.png"
+              src="/hero3.png"
               height={540}
               width={960}
               alt="Hero image showing career advancement"
